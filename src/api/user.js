@@ -1,3 +1,4 @@
+/* eslint-disable no-throw-literal */
 import {API_HOST} from '../utils/constants';
 import {getTokenApi} from './auth';
 
