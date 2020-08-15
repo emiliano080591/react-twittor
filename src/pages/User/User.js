@@ -1,5 +1,4 @@
 import React,{useEffect,useState} from 'react';
-//import {Button,Spinner} from 'react-bootstrap';
 import {withRouter} from 'react-router-dom';
 import BasicLayout from '../../layout/BasicLayout';
 import {getUserApi} from '../../api/user';
@@ -14,7 +13,7 @@ import './User.scss';
 import { Button, Spinner } from 'react-bootstrap';
 
 function User(props) {
-    const {match}=props;
+    const {match,setRefreshCheckLogin }=props;
     const [user, setUser] = useState(null);
     const [tweets, setTweets] = useState(null);
     const [page, setPage] = useState(1);
@@ -61,7 +60,7 @@ function User(props) {
     };
 
     return (
-        <BasicLayout className="user">
+        <BasicLayout className="user" setRefreshCheckLogin={setRefreshCheckLogin}>
             <div className="user__title">
                 <h2>
                     {user ? `${user.nombre} ${user.apellidos}` : "Este usuario no existe"}
