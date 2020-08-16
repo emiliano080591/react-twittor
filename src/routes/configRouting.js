@@ -15,12 +15,13 @@ export default[
         page:Users
     },
     {
+        path:"/error",
+        page:Error404
+    },
+    {
         path:"/:id",
         exact:true,
         page:User
-    },
-    {
-        path:"*",
-        page:Error404
     }
+    
 ]
